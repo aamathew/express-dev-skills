@@ -7,8 +7,16 @@ const skills = [
   module.exports = {
     getAll,
     getOne,
-    create
+    create,
+    deleteOne
   };
+
+  function deleteOne(id) {
+    id=parseInt(id);
+    const idx = skills.findIndex(todo => todo.id === id);
+    skills.splice(idx, 1);
+
+  }
 
   function create (s) {
     const skill = {}
